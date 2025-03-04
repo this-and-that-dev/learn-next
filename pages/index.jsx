@@ -1,6 +1,6 @@
 // '/' 에 해당하는 페이지
 
-import ProductList from "@/components/ProductList";
+import ProductList from "@/components/product-list/ProductList";
 import ProductHeader from "@/components/ProductHeader";
 
 function ProductPage() {

@@ -26,4 +26,9 @@ function addToCart({id, name, price, imageUrl}) {
     });
 }
 
-export {instance, fetchProducts, fetchProductDetails, addToCart};
+//장바구니 조회 API 함수
+function fetchCarts() {
+    return instance.get('/carts')
+}
+
+export {instance, fetchProducts, fetchProductDetails, addToCart, fetchCarts};

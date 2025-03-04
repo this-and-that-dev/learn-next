@@ -1,5 +1,21 @@
-// '/login' 에 해당하는 페이지 컴포넌트
+import {fetchCarts} from "@/api/index.js";
+import CartHeader from "@/components/cart/CartHeader";
+import CartList from "@/components/cart/CartList";
 
-export default function CartPage() {
-    return <div>장바구니 페이지</div>
+export default function CartPage({carts}) {
+    return (
+        <>
+            <CartHeader />
+            <CartList carts={carts} />
+        </>
+    )
+}
+
+export async function getServerSideProps() {
+    const {data} = await fetchCarts();
+    return {
+        props: {
+            carts: data
+        }
+    }
 }
