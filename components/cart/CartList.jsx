@@ -3,6 +3,7 @@ import styles from './CartList.module.css';
 
 export default function CartList({carts}) {
 
+    const totalPrice = carts.reduce((acc, item) => acc + parseFloat(item.price), 0);
     return (
         <>
             <div>
@@ -21,8 +22,8 @@ export default function CartList({carts}) {
                 </ul>
             </div>
             <div>
-                <p>총 가격 : </p>
-                <p>총 수량 : </p>
+                <p>총 가격 : {totalPrice.toLocaleString()}</p>
+                <p>총 수량 : {carts.length}</p>
             </div>
         </>
     )
