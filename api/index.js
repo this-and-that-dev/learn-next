@@ -6,8 +6,8 @@ const instance = axios.create({
 
 function fetchProducts(productId) {
     return instance.get('/products', {
-        params : {
-            id : productId
+        params: {
+            id: productId
         }
     })
 }
@@ -16,4 +16,14 @@ function fetchProductDetails(productId) {
     return instance.get(`/products/${productId}`)
 }
 
-export {instance, fetchProducts, fetchProductDetails};
+//장바구니에 아이템을 추가하는 API 함수
+function addToCart({id, name, price, imageUrl}) {
+    return instance.post(`/carts`, {
+        id,
+        name,
+        price,
+        imageUrl
+    });
+}
+
+export {instance, fetchProducts, fetchProductDetails, addToCart};
