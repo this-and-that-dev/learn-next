@@ -1,18 +1,17 @@
 // '/' 에 해당하는 페이지
 
-import ProductList from "@/components/product-list/ProductList";
-import ProductHeader from "@/components/ProductHeader";
+import ProductList from '@/components/product-list/ProductList';
+import ProductHeader from '@/components/ProductHeader';
 
 function ProductPage() {
+	const headerTitle = '상품 목록 페이지';
 
-    const headerTitle = "상품 목록 페이지";
-
-    return (
-        <div>
-            <ProductHeader title={headerTitle}/>
-            <ProductList />
-        </div>
-    )
+	return (
+		<div>
+			<ProductHeader title={headerTitle} />
+			<ProductList />
+		</div>
+	);
 }
 
 /**

@@ -187,6 +187,18 @@
       "name": "Intelligent Metal Mouse",
       "price": "84.00",
       "imageUrl": "https://cdn.pixabay.com/user/2023/05/21/19-38-51-804_250x250.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Practical Metal Gloves",
+      "price": "702.00",
+      "imageUrl": "https://cdn.pixabay.com/user/2020/10/13/02-20-44-441_250x250.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Unbranded Rubber Chair",
+      "price": "458.00",
+      "imageUrl": "https://cdn.pixabay.com/user/2014/06/04/17-13-09-273_250x250.jpg"
     }
   ]
 }

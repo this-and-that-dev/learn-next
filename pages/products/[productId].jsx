@@ -1,26 +1,25 @@
-import ProductHeader from "@/components/ProductHeader";
-import {fetchProductDetails} from "@/api";
-import ProductInfo from "@/components/product-detail/ProductInfo";
+import ProductHeader from '@/components/ProductHeader';
+import { fetchProductDetails } from '@/api';
+import ProductInfo from '@/components/product-detail/ProductInfo';
 
 //상품 상세 페이지
-export default function ProductDetailPage({productDetail}) {
-    const productDetailHeader = '상품 상세 정보 페이지';
-    return (
-            <>
-                <ProductHeader title={productDetailHeader}/>
-                <ProductInfo productDetail={productDetail}/>
-            </>
-    )
+export default function ProductDetailPage({ productDetail }) {
+	const productDetailHeader = '상품 상세 정보 페이지';
+	return (
+		<>
+			<ProductHeader title={productDetailHeader} />
+			<ProductInfo productDetail={productDetail} />
+		</>
+	);
 }
 
 export async function getServerSideProps(context) {
+	const id = context.params.productId;
+	const { data } = await fetchProductDetails(id);
 
-    const id = context.params.productId;
-    const {data} = await fetchProductDetails(id);
-
-    return {
-        props: {
-            productDetail : data
-        }
-    }
+	return {
+		props: {
+			productDetail: data,
+		},
+	};
 }
