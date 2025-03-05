@@ -26,9 +26,21 @@ function addToCart({ id, name, price, imageUrl }) {
 	});
 }
 
+//장바구니 삭제
+function removeCartItem(id) {
+	return instance.delete('/carts/' + id);
+}
+
 //장바구니 조회 API 함수
 function fetchCarts() {
 	return instance.get('/carts');
 }
 
-export { instance, fetchProducts, fetchProductDetails, addToCart, fetchCarts };
+export {
+	instance,
+	fetchProducts,
+	fetchProductDetails,
+	addToCart,
+	fetchCarts,
+	removeCartItem,
+};
